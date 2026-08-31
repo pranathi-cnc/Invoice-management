@@ -1,0 +1,569 @@
+/* =======================
+   Global
+======================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Segoe UI,Arial,sans-serif;
+    background:#f4f7fb;
+    color:#1f2937;
+}
+
+/* =======================
+   Header
+======================= */
+
+.app-header{
+    background:#ffffff;
+    box-shadow:0 2px 10px rgba(0,0,0,.06);
+    position:sticky;
+    top:0;
+    z-index:100;
+}
+
+.header-container{
+    max-width:1400px;
+    margin:auto;
+    padding:18px 40px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.brand{
+    display:flex;
+    align-items:center;
+    gap:15px;
+}
+
+.brand-logo{
+    width:50px;
+    height:50px;
+    border-radius:14px;
+    background:#2563eb;
+    color:white;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.brand-logo svg{
+    width:28px;
+}
+
+.brand h1{
+    font-size:28px;
+}
+
+.badge{
+    display:inline-block;
+    margin-top:4px;
+    background:#e8f0ff;
+    color:#2563eb;
+    padding:4px 10px;
+    border-radius:20px;
+    font-size:12px;
+}
+
+/* =======================
+   Search
+======================= */
+
+.search-wrapper{
+    width:360px;
+    position:relative;
+}
+
+.search-wrapper input{
+    width:100%;
+    padding:14px 18px 14px 45px;
+    border:1px solid #d7dde8;
+    border-radius:10px;
+    outline:none;
+    font-size:15px;
+}
+
+.search-wrapper input:focus{
+    border-color:#2563eb;
+}
+
+.search-icon{
+    width:20px;
+    position:absolute;
+    top:14px;
+    left:14px;
+    color:#777;
+}
+
+/* =======================
+   Dashboard
+======================= */
+
+.dashboard{
+    max-width:1300px;
+    margin:40px auto;
+    padding:0 30px;
+}
+
+/* =======================
+   Cards
+======================= */
+
+.upload-card,
+.files-card{
+
+    background:white;
+
+    border-radius:16px;
+
+    padding:30px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+
+    margin-bottom:35px;
+
+}
+
+/* =======================
+   Titles
+======================= */
+
+.section-title h2{
+    font-size:28px;
+    margin-bottom:10px;
+}
+
+.section-title p{
+    color:#6b7280;
+    margin-bottom:25px;
+}
+
+/* =======================
+   Upload
+======================= */
+
+.upload-area{
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    border:2px dashed #9db7ef;
+
+    border-radius:15px;
+
+    background:#f9fbff;
+
+    cursor:pointer;
+
+    padding:50px;
+
+    transition:.3s;
+
+}
+
+.upload-area:hover{
+
+    background:#eef5ff;
+
+    border-color:#2563eb;
+
+}
+
+.upload-icon{
+
+    width:80px;
+
+    height:80px;
+
+    background:#2563eb;
+
+    color:white;
+
+    border-radius:50%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    margin-bottom:20px;
+
+}
+
+.upload-icon svg{
+
+    width:42px;
+
+}
+
+.upload-area h3{
+
+    margin-bottom:10px;
+
+    font-size:24px;
+
+}
+
+.upload-area p{
+
+    color:#666;
+
+}
+
+.upload-area small{
+
+    margin-top:10px;
+
+    color:#888;
+
+}
+
+.hidden-input{
+
+    display:none;
+
+}
+
+/* =======================
+   Selected File
+======================= */
+
+.selected-file{
+
+    margin-top:25px;
+
+    padding:15px;
+
+    background:#f5f7fb;
+
+    border-radius:10px;
+
+}
+
+#file-name{
+
+    margin-top:8px;
+
+    color:#2563eb;
+
+    font-weight:600;
+
+}
+
+/* =======================
+   Button
+======================= */
+
+.primary-btn{
+
+    margin-top:25px;
+
+    width:100%;
+
+    padding:16px;
+
+    border:none;
+
+    border-radius:10px;
+
+    background:#2563eb;
+
+    color:white;
+
+    font-size:16px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.primary-btn:hover{
+
+    background:#1e4fd8;
+
+}
+
+.primary-btn:disabled{
+
+    background:#cbd5e1;
+
+    cursor:not-allowed;
+
+}
+
+/* =======================
+   Processing
+======================= */
+
+.processing-status{
+
+    margin-top:20px;
+
+    background:#fff7e6;
+
+    color:#a16207;
+
+    padding:15px;
+
+    border-radius:10px;
+
+    font-weight:600;
+
+}
+
+/* =======================
+   Progress
+======================= */
+
+.progress-wrapper{
+
+    margin-top:20px;
+
+    display:none;
+
+}
+
+.progress-track{
+
+    height:12px;
+
+    border-radius:20px;
+
+    background:#e5e7eb;
+
+    overflow:hidden;
+
+}
+
+.progress-fill{
+
+    width:0;
+
+    height:100%;
+
+    background:#2563eb;
+
+    transition:.3s;
+
+}
+
+/* =======================
+   Upload Status
+======================= */
+
+.status-alert{
+
+    margin-top:18px;
+
+    font-weight:600;
+
+}
+
+/* =======================
+   Table Header
+======================= */
+
+.table-header{
+
+    display:grid;
+
+    grid-template-columns:6fr 1fr;
+
+    align-items:center;
+
+    padding:18px 22px;
+
+    background:#f5f7fb;
+
+    border-radius:12px;
+
+    font-size:22px;
+
+    font-weight:700;
+
+    margin-bottom:15px;
+
+}
+
+/* =======================
+   File List
+======================= */
+
+.file-list{
+
+    max-height:520px;
+
+    overflow-y:auto;
+
+}
+
+/* =======================
+   File Card
+======================= */
+
+.repo-file-card{
+
+    display:grid;
+
+    grid-template-columns:6fr 1fr;
+
+    align-items:center;
+
+    padding:22px;
+
+    border-bottom:1px solid #ececec;
+
+}
+
+.repo-file-card:hover{
+
+    background:#f9fbff;
+
+}
+
+.file-meta-block{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+}
+
+.extension-icon-box{
+
+    width:54px;
+
+    height:54px;
+
+    border-radius:12px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:28px;
+
+    background:#f3f4f6;
+
+}
+.icon-pdf{
+
+    background:#ef4444;
+
+}
+
+.icon-image{
+
+    background:#0ea5e9;
+
+}
+
+.icon-word{
+
+    background:#2563eb;
+
+}
+
+.extension-icon-box svg{
+
+    width:25px;
+
+}
+
+.file-title-text{
+
+    font-size:18px;
+
+    font-weight:700;
+
+    color:#1f2937;
+
+}
+
+.file-info{
+
+    margin-top:8px;
+
+    color:#6b7280;
+
+    font-size:17px;
+
+}
+
+.upload-time{
+
+    margin-top:8px;
+
+    color:#656970;
+
+    font-size:16px;
+
+}
+
+/* =======================
+   Download
+======================= */
+
+.download-action-anchor{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    color:#000;
+
+    text-decoration:none;
+
+}
+
+.download-action-anchor svg{
+
+    width:28px;
+
+    height:28px;
+
+    stroke:#000;
+
+    transition:.25s;
+
+}
+
+.download-action-anchor:hover svg{
+
+    stroke:#2563eb;
+
+    transform:scale(1.15);
+
+}
+
+/* =======================
+   Footer
+======================= */
+
+.footer{
+
+    text-align:center;
+
+    padding:30px;
+
+    color:#666;
+
+}

@@ -1,0 +1,18 @@
+.venv/
+__pycache__/
+*.pyc
+.env
+
+# PocketBase runtime/database data
+pb_data/
+
+# PocketBase executable
+pocketbase.exe
+
+# Generated/output files
+**/output/
+**/__pycache__/
+
+# Uploaded/user files
+backend/uploads/
+OCR_BILL_POC/input/

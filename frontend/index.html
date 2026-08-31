@@ -1,0 +1,266 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>DocuVault Enterprise</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <!-- ================= HEADER ================= -->
+
+        <div class="header-container">
+
+            <div class="brand">
+
+                <div class="brand-logo">
+
+                    <svg xmlns="http://www.w3.org/2000/svg"
+                         fill="none"
+                         viewBox="0 0 24 24"
+                         stroke-width="2"
+                         stroke="currentColor">
+
+                        <path stroke-linecap="round"
+                              stroke-linejoin="round"
+                              d="M3.75 7.5h16.5m-16.5 4.5h16.5m-16.5 4.5h10.5"/>
+
+                    </svg>
+
+                </div>
+
+                <div>
+
+                    <h1>DocuVault</h1>
+                    <span class="badge">
+                        Intelligent Invoice Repository
+                    </span>
+
+                </div>
+
+            </div>
+
+            <div class="search-wrapper">
+
+                <svg class="search-icon"
+                     xmlns="http://www.w3.org/2000/svg"
+                     fill="none"
+                     viewBox="0 0 24 24"
+                     stroke-width="2"
+                     stroke="currentColor">
+
+                    <path stroke-linecap="round"
+                          stroke-linejoin="round"
+                          d="m21 21-4.35-4.35M10.5 18a7.5 7.5 0 1 1 0-15a7.5 7.5 0 0 1 0 15z"/>
+
+                </svg>
+
+                <input
+                    type="text"
+                    id="search-input"
+                    placeholder="Search stored invoices..."
+                >
+
+            </div>
+
+        </div>
+
+    </header>
+
+    <!-- ================= MAIN ================= -->
+
+    <main class="dashboard">
+
+        <!-- ================= Upload Card ================= -->
+
+        <section class="upload-card">
+
+            <div class="section-title">
+
+                <h2>Upload Invoice</h2>
+
+                <p>
+
+                    Upload invoice images or PDF documents.
+                    The system will automatically extract
+                    structured information using OCR and AI.
+
+                </p>
+
+            </div>
+
+            <div class="upload-box">
+
+                <input
+                    type="file"
+                    id="file-input"
+                    class="hidden-input"
+                >
+
+                <label
+                    for="file-input"
+                    class="upload-area">
+
+                    <div class="upload-icon">
+
+                        <svg xmlns="http://www.w3.org/2000/svg"
+                             fill="none"
+                             viewBox="0 0 24 24"
+                             stroke-width="2"
+                             stroke="currentColor">
+
+                            <path stroke-linecap="round"
+                                  stroke-linejoin="round"
+                                  d="M12 16V4m0 0l-4 4m4-4l4 4M5 20h14"/>
+
+                        </svg>
+
+                    </div>
+
+                    <h3>Drag & Drop</h3>
+
+                    <p>or click to browse files</p>
+
+                    <small>
+
+                        Supported :
+                        PDF,
+                        PNG,
+                        JPG,
+                        JPEG,
+                        DOC,
+                        DOCX
+
+                    </small>
+
+                </label>
+
+            </div>
+
+            <div class="selected-file">
+
+                <strong>Selected File</strong>
+
+                <div id="file-name">
+
+                    No file selected
+
+                </div>
+
+            </div>
+
+            <!-- Processing Status -->
+
+            <div
+                id="processing-status"
+                class="processing-status"
+                style="display:none;">
+
+                ⏳ Processing invoice...
+
+            </div>
+
+            <!-- Upload Progress -->
+
+            <div
+                id="progress-container"
+                class="progress-wrapper">
+
+                <div class="progress-track">
+
+                    <div
+                        id="progress-bar"
+                        class="progress-fill">
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div
+                id="upload-status"
+                class="status-alert">
+
+            </div>
+
+            <button
+                id="submit-btn"
+                class="primary-btn"
+                disabled>
+
+                Upload Invoice
+
+            </button>
+
+        </section>
+            <!-- ================= Stored Files ================= -->
+
+        <section class="files-card">
+
+            <div class="section-title">
+
+                <h2>Stored Documents</h2>
+
+                <p>
+
+                    All uploaded documents are stored securely and
+                    can be searched or downloaded at any time.
+
+                </p>
+
+            </div>
+
+            <div class="table-header">
+
+                <div class="header-name">
+
+                    File
+
+                </div>
+
+
+                <div class="header-download">
+
+                    Download
+
+                </div>
+
+            </div>
+
+            <div
+                id="file-gallery"
+                class="file-list">
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- ================= Footer ================= -->
+
+    <footer class="footer">
+
+        <p>
+
+            DocuVault Enterprise • Intelligent Invoice Management System
+
+        </p>
+
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
